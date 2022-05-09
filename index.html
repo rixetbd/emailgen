@@ -114,12 +114,12 @@
 
     <script>
         $("#first_name").keyup(function(){
-            var firstNameInput = $("#first_name").val().toLowerCase();
+            var firstNameInput = $("#first_name").val().toLowerCase().replace(/\s/g, '.');
             localStorage.setItem("firstName", firstNameInput);
         });
 
         $("#last_name").keyup(function(){
-            var lastNameInput = $("#last_name").val().toLowerCase();
+            var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
             localStorage.setItem("lastName", lastNameInput);
         });
 
