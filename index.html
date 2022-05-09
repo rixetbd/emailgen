@@ -21,37 +21,36 @@
                     <div class="form-items">
                         <h3 class="gradient_text">Email Finder</h3>
                         <p>Fill in the data below.</p>
-                        
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="first_name" placeholder="Full Name"
-                                        required>
-                                </div>
 
-                                <div class="col-md-6">
-                                    <input class="form-control" type="text" id="last_name" placeholder="Last Name"
-                                        required>
-                                </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="first_name" placeholder="Full Name"
+                                    required>
                             </div>
 
-                            <div class="col-md-12">
-                                <input class="form-control" type="text" id="domain" placeholder="example.com" required>
+                            <div class="col-md-6">
+                                <input class="form-control" type="text" id="last_name" placeholder="Last Name" required>
                             </div>
+                        </div>
 
-                            <div class="my-2">
-                                <label class="form-check-label">I confirm, it's my responsibility.</label>
-                                <small id="first_namecheck" style="color: rgb(255, 100, 100);" >First Name missing.</small>
-                                <small id="last_namecheck" style="color: rgb(255, 100, 100);" >Last Name missing.</small>
-                                <small id="domaincheck" style="color: rgb(255, 100, 100);" >Domain missing.</small>
-                            </div>
-                            
+                        <div class="col-md-12">
+                            <input class="form-control" type="text" id="domain" placeholder="example.com" required>
+                        </div>
 
-                            <div class="form-button">
-                                <button id="submitbtn" type="button" class="btn btn-sm btn-success me-2"><i
-                                        class="fa-solid fa-dna"></i> Genarate</button>
-                                <button id="resetbtn" type="button" class="btn btn-sm btn-danger"><i
-                                        class="fa-solid fa-rotate-right"></i> Reset</button>
-                            </div>
+                        <div class="my-2">
+                            <label class="form-check-label">I confirm, it's my responsibility.</label>
+                            <small id="first_namecheck" style="color: rgb(255, 100, 100);">First Name missing.</small>
+                            <small id="last_namecheck" style="color: rgb(255, 100, 100);">Last Name missing.</small>
+                            <small id="domaincheck" style="color: rgb(255, 100, 100);">Domain missing.</small>
+                        </div>
+
+
+                        <div class="form-button">
+                            <button id="submitbtn" type="button" class="btn btn-sm btn-success me-2"><i
+                                    class="fa-solid fa-dna"></i> Genarate</button>
+                            <button id="resetbtn" type="button" class="btn btn-sm btn-danger"><i
+                                    class="fa-solid fa-rotate-right"></i> Reset</button>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -123,10 +122,9 @@
 
 
     <script>
-
-        $('#first_namecheck').hide();  
-        $('#last_namecheck').hide();  
-        $('#domaincheck').hide();  
+        $('#first_namecheck').hide();
+        $('#last_namecheck').hide();
+        $('#domaincheck').hide();
 
         $("#submitbtn").click(function () {
 
@@ -134,32 +132,32 @@
             var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
             var domainInput = $("#domain").val().toLowerCase();
 
-            if (firstNameInput.length == ''){
+            if (firstNameInput.length == '') {
                 $('#first_namecheck').show();
-            }else{
-                $('#first_namecheck').hide(); 
+            } else {
+                $('#first_namecheck').hide();
             }
 
-            if (lastNameInput.length == ''){
+            if (lastNameInput.length == '') {
                 $('#last_namecheck').show();
-            }else{
-                $('#last_namecheck').hide(); 
+            } else {
+                $('#last_namecheck').hide();
             }
 
-            if (domainInput.length == ''){
+            if (domainInput.length == '') {
                 $('#domaincheck').show();
-            }else{
-                $('#domaincheck').hide(); 
+            } else {
+                $('#domaincheck').hide();
             }
 
             if (firstNameInput.length == '' || lastNameInput.length == '' || domainInput.length == '') {
                 return false;
-            }else{
-            
+            } else {
+
                 localStorage.setItem("firstName", firstNameInput);
                 localStorage.setItem("lastName", lastNameInput);
                 localStorage.setItem("domain", domainInput);
-       
+
                 location.reload();
             }
         });

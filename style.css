@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
 
-a{
+a {
     text-decoration: none;
 }
 
@@ -17,8 +17,8 @@ html,
 body {
     height: 100%;
     /* background-color: #152733; */
-    background: rgb(21,39,51);
-    background: linear-gradient(145deg, rgba(21,39,51,1) 40%, rgb(6, 88, 18) 100%);
+    background: rgb(21, 39, 51);
+    background: linear-gradient(145deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
 }
 
 .form-holder {
@@ -36,11 +36,12 @@ body {
         align-items: center;
         min-height: 95vh;
     }
+
     .form-content .form-items {
         width: 100%;
         min-width: 540px;
     }
-  }
+}
 
 .form-holder .form-content {
     position: relative;
@@ -164,18 +165,17 @@ body {
     margin-bottom: 8px !important;
 }
 
-.link-copyright:hover{
+.link-copyright:hover {
     color: #ff606e;
 }
 
-.link-copyright{
+.link-copyright {
     color: #2acc80;
 }
 
-.gradient_text{
+.gradient_text {
     background: #fff;
     background: linear-gradient(to right, #FFFFFF 0%, #CF1512 45%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
-
