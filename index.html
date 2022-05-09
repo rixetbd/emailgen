@@ -21,31 +21,37 @@
                     <div class="form-items">
                         <h3 class="gradient_text">Email Finder</h3>
                         <p>Fill in the data below.</p>
+                        
+                            <div class="row">
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="first_name" placeholder="Full Name"
+                                        required>
+                                </div>
 
-                        <div class="row">
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" id="first_name" placeholder="Full Name" required>
+                                <div class="col-md-6">
+                                    <input class="form-control" type="text" id="last_name" placeholder="Last Name"
+                                        required>
+                                </div>
                             </div>
 
-                            <div class="col-md-6">
-                                <input class="form-control" type="text" id="last_name" placeholder="Last Name" required>
+                            <div class="col-md-12">
+                                <input class="form-control" type="text" id="domain" placeholder="example.com" required>
                             </div>
-                        </div>
 
-                        <div class="col-md-12">
-                            <input class="form-control" type="text" id="domain" placeholder="example.com" required>
-                        </div>
+                            <div class="my-2">
+                                <label class="form-check-label">I confirm, it's my responsibility.</label>
+                                <small id="first_namecheck" style="color: rgb(255, 100, 100);" >First Name missing.</small>
+                                <small id="last_namecheck" style="color: rgb(255, 100, 100);" >Last Name missing.</small>
+                                <small id="domaincheck" style="color: rgb(255, 100, 100);" >Domain missing.</small>
+                            </div>
+                            
 
-                        <div class="my-2">
-                            <label class="form-check-label">I confirm, it's my responsibility.</label>
-                        </div>
-
-
-                        <div class="form-button">
-                            <button id="submitbtn" type="button" class="btn btn-sm btn-success me-2"><i class="fa-solid fa-dna"></i> Genarate</button>
-                            <button id="resetbtn" type="button" class="btn btn-sm btn-danger"><i class="fa-solid fa-rotate-right"></i> Reset</button>
-                        </div>
-
+                            <div class="form-button">
+                                <button id="submitbtn" type="button" class="btn btn-sm btn-success me-2"><i
+                                        class="fa-solid fa-dna"></i> Genarate</button>
+                                <button id="resetbtn" type="button" class="btn btn-sm btn-danger"><i
+                                        class="fa-solid fa-rotate-right"></i> Reset</button>
+                            </div>
                     </div>
                 </div>
             </div>
@@ -60,12 +66,12 @@
                             <script>
                                 var str1 = localStorage.getItem("firstName");
                                 var str2 = localStorage.getItem("lastName");
-                                var str3 = localStorage.getItem("domain");
+                                var str3 = "@" + localStorage.getItem("domain");
 
-                                var a = str1.concat (str2,str3);
-                                var b = str1.concat (str3);
-                                var c = str2.concat (str3);
-                                var d = str2.concat (str1,str3);
+                                var a = str1.concat(str2, str3);
+                                var b = str1.concat(str3);
+                                var c = str2.concat(str3);
+                                var d = str2.concat(str1, str3);
                                 var e = str1.charAt(0);
                                 var f = str2.charAt(0);
 
@@ -77,21 +83,21 @@
                                 document.write("<br>");
                                 document.write(d);
                                 document.write("<br>");
-                                document.write(str1+"."+str2+str3);
+                                document.write(str1 + "." + str2 + str3);
                                 document.write("<br>");
-                                document.write(str1+"_"+str2+str3);
+                                document.write(str1 + "_" + str2 + str3);
                                 document.write("<br>");
-                                document.write(str1+"-"+str2+str3);
+                                document.write(str1 + "-" + str2 + str3);
                                 document.write("<br>");
-                                document.write(e+str2+str3);
+                                document.write(e + str2 + str3);
                                 document.write("<br>");
-                                document.write(str1+f+str3);
+                                document.write(str1 + f + str3);
                                 document.write("<br>");
-                                document.write(str2+e+str3);
+                                document.write(str2 + e + str3);
                                 document.write("<br>");
-                                document.write(e+f+str3);
+                                document.write(e + f + str3);
                                 document.write("<br>");
-                                document.write(e+"."+str2+str3);
+                                document.write(e + "." + str2 + str3);
                             </script>
                         </p>
 
@@ -102,7 +108,11 @@
             </div>
 
             <div class="col-12">
-                <p class="text-light text-center">Copyright &copy; <script type="text/javascript">var year = new Date();document.write(year.getFullYear());</script> 🤖 Development By <a class="link-copyright" target="_blank" href="https://rixetbd.github.io/portfolio/">Rabiul Islam.</a></p>
+                <p class="text-light text-center">Copyright &copy; <script type="text/javascript">
+                        var year = new Date();
+                        document.write(year.getFullYear());
+                    </script> 🤖 Development By <a class="link-copyright" target="_blank"
+                        href="https://rixetbd.github.io/portfolio/">Rabiul Islam.</a></p>
             </div>
         </div>
     </div>
@@ -113,29 +123,48 @@
 
 
     <script>
-        $("#first_name").keyup(function(){
+
+        $('#first_namecheck').hide();  
+        $('#last_namecheck').hide();  
+        $('#domaincheck').hide();  
+
+        $("#submitbtn").click(function () {
+
             var firstNameInput = $("#first_name").val().toLowerCase().replace(/\s/g, '.');
-            localStorage.setItem("firstName", firstNameInput);
-        });
-
-        $("#last_name").keyup(function(){
             var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
-            localStorage.setItem("lastName", lastNameInput);
+            var domainInput = $("#domain").val().toLowerCase();
+
+            if (firstNameInput.length == ''){
+                $('#first_namecheck').show();
+            }else{
+                $('#first_namecheck').hide(); 
+            }
+
+            if (lastNameInput.length == ''){
+                $('#last_namecheck').show();
+            }else{
+                $('#last_namecheck').hide(); 
+            }
+
+            if (domainInput.length == ''){
+                $('#domaincheck').show();
+            }else{
+                $('#domaincheck').hide(); 
+            }
+
+            if (firstNameInput.length == '' || lastNameInput.length == '' || domainInput.length == '') {
+                return false;
+            }else{
+            
+                localStorage.setItem("firstName", firstNameInput);
+                localStorage.setItem("lastName", lastNameInput);
+                localStorage.setItem("domain", domainInput);
+       
+                location.reload();
+            }
         });
 
-        $("#domain").keyup(function(){
-            var domainInput = "@"+$("#domain").val().toLowerCase();
-            localStorage.setItem("domain", domainInput);
-        });
-
-        $("#submitbtn").click(function(){
-            let firstNameGet = localStorage.getItem("firstName");
-            let lastNameGet = localStorage.getItem("lastName");
-            let domainGet = localStorage.getItem("domain");
-            location.reload();
-        });
-
-        $("#resetbtn").click(function(){
+        $("#resetbtn").click(function () {
             localStorage.clear();
             location.reload();
         });
@@ -144,25 +173,25 @@
             localStorage.clear();
         }
 
-        $("#copyFunc").click(function(){
-            /* Get the text field */
-            // var copyText = document.getElementById("output");
+        // $("#copyFunc").click(function () {
+        //     /* Get the text field */
+        //     // var copyText = document.getElementById("output");
 
-            // var copyText = $("#output").text();
-            var copyText = document.getElementById("output").innerHTML;
-            alert(copyText);
-            /* Select the text field */
-            copyText.select();
-            copyText.setSelectionRange(0, 99999); /* For mobile devices */
+        //     // var copyText = $("#output").text();
+        //     var copyText = document.getElementById("output").innerHTML;
+        //     alert(copyText);
+        //     /* Select the text field */
+        //     copyText.select();
+        //     copyText.setSelectionRange(0, 99999); /* For mobile devices */
 
-            /* Copy the text inside the text field */
-            navigator.clipboard.writeText(copyText.value);
+        //     /* Copy the text inside the text field */
+        //     navigator.clipboard.writeText(copyText.value);
 
-            /* Alert the copied text */
-            alert("Copied the text");
-        });
-
+        //     /* Alert the copied text */
+        //     alert("Copied the text");
+        // });
     </script>
 
 </body>
+
 </html>
