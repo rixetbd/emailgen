@@ -16,10 +16,87 @@ body {
 html,
 body {
     height: 100%;
-    /* background-color: #152733; */
-    background: rgb(21, 39, 51);
-    background: linear-gradient(145deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    /* background: linear-gradient(145deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%); */
     background-repeat: no-repeat;
+    animation: changeBackgroundColor 7s infinite;
+}
+
+@keyframes changeBackgroundColor {
+    0% {
+        background: linear-gradient(5deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    10% {
+        background: linear-gradient(15deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    15% {
+        background: linear-gradient(25deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    20% {
+        background: linear-gradient(35deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    25% {
+        background: linear-gradient(45deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    35% {
+        background: linear-gradient(55deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    40% {
+        background: linear-gradient(65deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    45% {
+        background: linear-gradient(75deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    50% {
+        background: linear-gradient(85deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    55% {
+        background: linear-gradient(95deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    60% {
+        background: linear-gradient(105deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    65% {
+        background: linear-gradient(115deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    70% {
+        background: linear-gradient(125deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    75% {
+        background: linear-gradient(135deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    80% {
+        background: linear-gradient(145deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    85% {
+        background: linear-gradient(155deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    90% {
+        background: linear-gradient(165deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    95% {
+        background: linear-gradient(175deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
+
+    100% {
+        background: linear-gradient(185deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    }
 }
 
 .form-holder {
@@ -35,7 +112,7 @@ body {
         display: flex;
         justify-content: center;
         align-items: center;
-        min-height: 95vh;
+        min-height: 90vh;
     }
 
     .form-content .form-items {
