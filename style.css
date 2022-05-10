@@ -19,6 +19,7 @@ body {
     /* background-color: #152733; */
     background: rgb(21, 39, 51);
     background: linear-gradient(145deg, rgba(21, 39, 51, 1) 40%, rgb(6, 88, 18) 100%);
+    background-repeat: no-repeat;
 }
 
 .form-holder {

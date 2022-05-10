@@ -84,6 +84,8 @@
                                 document.write("<br>");
                                 document.write(str1 + "." + str2 + str3);
                                 document.write("<br>");
+                                document.write(e + "." + str2 + str3);
+                                document.write("<br>");
                                 document.write(str1 + "_" + str2 + str3);
                                 document.write("<br>");
                                 document.write(str1 + "-" + str2 + str3);
@@ -95,8 +97,7 @@
                                 document.write(str2 + e + str3);
                                 document.write("<br>");
                                 document.write(e + f + str3);
-                                document.write("<br>");
-                                document.write(e + "." + str2 + str3);
+                                
                             </script>
                         </p>
 
@@ -128,8 +129,8 @@
 
         $("#submitbtn").click(function () {
 
-            var firstNameInput = $("#first_name").val().toLowerCase();
-            var lastNameInput = $("#last_name").val().toLowerCase();
+            var firstNameInput = $("#first_name").val().toLowerCase().str.replace(/\s/g, '');
+            var lastNameInput = $("#last_name").val().toLowerCase().str.replace(/\s/g, '');
             var domainInput = $("#domain").val().toLowerCase();
 
             if (firstNameInput.length == '') {
@@ -170,24 +171,7 @@
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
             localStorage.clear();
         }
-
-        // $("#copyFunc").click(function () {
-        //     /* Get the text field */
-        //     // var copyText = document.getElementById("output");
-
-        //     // var copyText = $("#output").text();
-        //     var copyText = document.getElementById("output").innerHTML;
-        //     alert(copyText);
-        //     /* Select the text field */
-        //     copyText.select();
-        //     copyText.setSelectionRange(0, 99999); /* For mobile devices */
-
-        //     /* Copy the text inside the text field */
-        //     navigator.clipboard.writeText(copyText.value);
-
-        //     /* Alert the copied text */
-        //     alert("Copied the text");
-        // });
+        
     </script>
 
 </body>
