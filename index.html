@@ -128,8 +128,8 @@
 
         $("#submitbtn").click(function () {
 
-            var firstNameInput = $("#first_name").val().toLowerCase().replace(/\s/g, '.');
-            var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
+            var firstNameInput = $("#first_name").val().toLowerCase();
+            var lastNameInput = $("#last_name").val().toLowerCase();
             var domainInput = $("#domain").val().toLowerCase();
 
             if (firstNameInput.length == '') {
