@@ -129,8 +129,8 @@
 
         $("#submitbtn").click(function () {
 
-            var firstNameInput = $("#first_name").val().toLowerCase().str.replace(/\s/g, '');
-            var lastNameInput = $("#last_name").val().toLowerCase().str.replace(/\s/g, '');
+            var firstNameInput = $("#first_name").val().toLowerCase().replace(/\s/g, '');
+            var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
             var domainInput = $("#domain").val().toLowerCase();
 
             if (firstNameInput.length == '') {
@@ -171,7 +171,7 @@
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
             localStorage.clear();
         }
-        
+
     </script>
 
 </body>
