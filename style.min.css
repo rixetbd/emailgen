@@ -191,7 +191,8 @@ body {
     background-color: #fff;
     font-size: 15px;
     font-weight: 300;
-    color: #8D8D8D;
+    /* color: #8D8D8D; */
+    color: #fff;
     -webkit-transition: all 0.3s ease;
     transition: all 0.3s ease;
     margin-top: 16px;
@@ -258,4 +259,11 @@ body {
     background: linear-gradient(to right, #FFFFFF 0%, #CF1512 45%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+}
+
+.form-content input[type=text],
+.cs_bg{
+    border: 1px solid #fff;
+    background-color: transparent !important;
+    outline: none;
 }
