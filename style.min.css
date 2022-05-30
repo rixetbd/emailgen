@@ -267,3 +267,49 @@ body {
     background-color: transparent !important;
     outline: none;
 }
+
+
+/* Toast Message */
+
+.toast-message {
+    position: fixed;
+    z-index: 9999;
+    top: 2rem;
+    right: 2rem;
+    background-color: #fff;
+    color: #000;
+    border: 1px solid #fff;
+    border-radius: .25rem;
+    padding: .5rem 2rem;
+    cursor: pointer;
+}
+
+.toast-message-slide-in {
+	animation: toast-animation-in 0.5s ease-in;
+}
+
+.toast-message-slide-out {
+	animation: toast-animation-out 0.5s ease-in;
+}
+
+@keyframes toast-animation-in {
+	from {
+		transform: translateX(200px);
+		opacity: 0;
+	}
+	to {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+}
+
+@keyframes toast-animation-out {
+	from {
+		transform: translateX(0px);
+		opacity: 1;
+	}
+	to {
+		transform: translateX(200px);
+		opacity: 0;
+	}
+}

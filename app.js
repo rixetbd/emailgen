@@ -1,113 +1,16 @@
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="shortcut icon" href="icon.png" type="image/x-icon">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" />
-    <link rel="stylesheet" href="style.min.css">
-    <title>Email Generator By RixetBD 😍</title>
-</head>
-
-<body>
-
-    <div class="container">
-        <div class="row align-items-center vh-100">
-            <div class="form-holder col-sm-12 col-md-6">
-                <form action="">
-                    <div class="form-content">
-                        <div class="form-items">
-                            <h3 class="gradient_text">Email Finder v1.1</h3>
-                            <p>Fill in the data below.</p>
-
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <input class="form-control cs_bg" type="text" id="first_name"
-                                        placeholder="First Name" required>
-                                </div>
-
-                                <div class="col-md-6">
-                                    <input class="form-control cs_bg" type="text" id="last_name" placeholder="Last Name"
-                                        required>
-                                </div>
-                            </div>
-
-                            <div class="col-md-12">
-                                <input class="form-control cs_bg" type="text" id="domain" placeholder="example.com"
-                                    required>
-                            </div>
-
-                            <div class="my-2">
-                                <label class="form-check-label">I confirm, it's my responsibility.</label>
-                                <small id="first_namecheck" style="color: rgb(255, 100, 100);">First Name
-                                    missing.</small>
-                                <small id="last_namecheck" style="color: rgb(255, 100, 100);">Last Name missing.</small>
-                                <small id="domaincheck" style="color: rgb(255, 100, 100);">Domain missing.</small>
-                            </div>
-
-                            <div class="form-button">
-                                <button id="submitbtn" type="submit" class="btn btn-sm btn-success me-2"><i
-                                        class="fa-solid fa-dna"></i> Genarate</button>
-                                <button id="resetbtn" type="button" class="btn btn-sm btn-danger"><i
-                                        class="fa-solid fa-rotate-right"></i> Reset</button>
-                            </div>
-                        </div>
-                    </div>
-                </form>
-            </div>
-
-            <div class="form-holder col-sm-12 col-md-6">
-                <div class="form-content">
-                    <div class="form-items text-light">
-                        <h3 class="gradient_text">Generated Email</h3>
-                        <p>Need to verify first</p>
-
-                        <p class="text-light" id="output"></p>
-
-                        <button id="copyFunc" type="button" class="btn btn-sm btn-success d-none"><i
-                                class="fa-solid fa-copy"></i> Copy Emails</button>
-
-                    </div>
-                </div>
-            </div>
-
-            <div class="col-12">
-                <p class="text-light text-center" style="margin-bottom: 5px"><small>Planning By Jayanta Debnath.</small>
-                </p>
-                <p class="text-light text-center">Copyright &copy; <script type="text/javascript">
-                        var year = new Date();
-                        document.write(year.getFullYear());
-                    </script> 🤖 Development By <a class="link-copyright" target="_blank"
-                        href="https://rixetbd.github.io/portfolio/">Rabiul Islam.</a></p>
-            </div>
-        </div>
-    </div>
 
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
-    <script type="text/javascript"
-        src="https://res.cloudinary.com/veseylab/raw/upload/v1636192990/magicmouse/magic_mouse-1.2.1.cdn.min.js">
-    </script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"></script>
+        // options = {
+        //     "cursorOuter": "circle-basic",
+        //     "hoverEffect": "circle-move",
+        //     "hoverItemMove": false,
+        //     "defaultCursor": true,
+        //     "outerWidth": 41,
+        //     "outerHeight": 41
+        //     }; 
+        //     magicMouse(options);
 
-    <!-- <script>
-        options = {
-            "cursorOuter": "circle-basic",
-            "hoverEffect": "circle-move",
-            "hoverItemMove": false,
-            "defaultCursor": true,
-            "outerWidth": 41,
-            "outerHeight": 41
-            }; 
-            magicMouse(options);
-    </script> -->
 
-    <script type="module">
         var app = new Vue({
           el: "#app",
           data: {
@@ -179,12 +82,10 @@
             }
           },
         });
-      </script>
 
 
 
 
-    <script>
         var str1 = localStorage.getItem("firstName");
         var str2 = localStorage.getItem("lastName");
         var str3 = "@" + localStorage.getItem("domain");
@@ -232,8 +133,8 @@
                     divToast = null;
                 })
             })
-
-            setTimeout(function () {
+            
+            setTimeout(function() {
                 divToast.classList.remove('toast-message-slide-in');
                 divToast.classList.add('toast-message-slide-out');
                 divToast.remove();
@@ -242,9 +143,7 @@
 
             document.body.appendChild(divToast);
         }
-    </script>
 
-    <script>
         $('#first_namecheck').hide();
         $('#last_namecheck').hide();
         $('#domaincheck').hide();
@@ -293,8 +192,4 @@
         if (performance.navigation.type == performance.navigation.TYPE_RELOAD) {
             localStorage.clear();
         }
-    </script>
 
-</body>
-
-</html>
