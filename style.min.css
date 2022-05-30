@@ -273,7 +273,7 @@ body {
 
 .toast-message {
     position: fixed;
-    z-index: 9999;
+    z-index: 99999;
     top: 2rem;
     right: 2rem;
     background-color: #fff;
