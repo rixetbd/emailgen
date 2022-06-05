@@ -20,13 +20,13 @@
                 <form action="">
                     <div class="form-content">
                         <div class="form-items">
-                            <h3 class="gradient_text">Email Finder</h3>
+                            <h3 class="gradient_text">Email Finder v1.1</h3>
                             <p>Fill in the data below.</p>
 
                             <div class="row">
                                 <div class="col-md-6">
-                                    <input class="form-control cs_bg" type="text" id="first_name" placeholder="First Name"
-                                        required>
+                                    <input class="form-control cs_bg" type="text" id="first_name"
+                                        placeholder="First Name" required>
                                 </div>
 
                                 <div class="col-md-6">
@@ -36,7 +36,8 @@
                             </div>
 
                             <div class="col-md-12">
-                                <input class="form-control cs_bg" type="text" id="domain" placeholder="example.com" required>
+                                <input class="form-control cs_bg" type="text" id="domain" placeholder="example.com"
+                                    required>
                             </div>
 
                             <div class="my-2">
@@ -64,46 +65,10 @@
                         <h3 class="gradient_text">Generated Email</h3>
                         <p>Need to verify first</p>
 
-                        <p class="text-light" id="output">
-                            <script>
-                                var str1 = localStorage.getItem("firstName");
-                                var str2 = localStorage.getItem("lastName");
-                                var str3 = "@" + localStorage.getItem("domain");
+                        <p class="text-light" id="output"></p>
 
-                                var a = str1.concat(str2, str3);
-                                var b = str1.concat(str3);
-                                var c = str2.concat(str3);
-                                var d = str2.concat(str1, str3);
-                                var e = str1.charAt(0);
-                                var f = str2.charAt(0);
-
-                                document.write(b);
-                                document.write("<br>");
-                                document.write(c);
-                                document.write("<br>");
-                                document.write(a);
-                                document.write("<br>");
-                                document.write(d);
-                                document.write("<br>");
-                                document.write(str1 + "." + str2 + str3);
-                                document.write("<br>");
-                                document.write(e + "." + str2 + str3);
-                                document.write("<br>");
-                                document.write(str1 + "_" + str2 + str3);
-                                document.write("<br>");
-                                document.write(str1 + "-" + str2 + str3);
-                                document.write("<br>");
-                                document.write(e + str2 + str3);
-                                document.write("<br>");
-                                document.write(str1 + f + str3);
-                                document.write("<br>");
-                                document.write(str2 + e + str3);
-                                document.write("<br>");
-                                document.write(e + f + str3);
-                            </script>
-                        </p>
-
-                        <!-- <button id="copyFunc" type="button" class="btn btn-sm btn-success"><i class="fa-solid fa-copy"></i> Copy text</button> -->
+                        <button id="copyFunc" type="button" class="btn btn-sm btn-success d-none"><i
+                                class="fa-solid fa-copy"></i> Copy Emails</button>
 
                     </div>
                 </div>
@@ -216,6 +181,68 @@
         });
       </script>
 
+
+
+
+    <script>
+        var str1 = localStorage.getItem("firstName");
+        var str2 = localStorage.getItem("lastName");
+        var str3 = "@" + localStorage.getItem("domain");
+
+        var a = str1.concat(str2, str3);
+        var b = str1.concat(str3);
+        var c = str2.concat(str3);
+        var d = str2.concat(str1, str3);
+        var e = str1.charAt(0);
+        var f = str2.charAt(0);
+
+        let emails =
+            `${b}\n${c}\n${a}\n${d}\n${str1 + "." + str2 + str3}\n${e + "." + str2 + str3}\n${str1 + "_" + str2 + str3}\n${str1 + "-" + str2 + str3}\n${e + str2 + str3}\n${str1 + f + str3}\n${str2 + e + str3}\n${e + f + str3}`;
+
+        const output = document.getElementById('output')
+        const copyFunc = document.getElementById('copyFunc')
+        output.innerText = emails
+
+        if (output.innerText != null) {
+            copyFunc.classList.remove('d-none')
+        }
+
+        let divToast = null;
+
+        copyFunc.addEventListener('click', function () {
+            window.navigator.clipboard.writeText(output.innerText)
+            if (divToast != null) {
+                divToast.remove();
+                divToast = null;
+            }
+            generateToastmessage(`All Email Copied`)
+        })
+
+        function generateToastmessage(msg) {
+            divToast = document.createElement('div')
+            divToast.innerText = msg;
+            divToast.className = 'toast-message toast-message-slide-in';
+
+            divToast.addEventListener('click', function () {
+                divToast.classList.remove('toast-message-slide-in');
+                divToast.classList.add('toast-message-slide-out');
+
+                divToast.addEventListener('animationend', function () {
+                    divToast.remove();
+                    divToast = null;
+                })
+            })
+
+            setTimeout(function () {
+                divToast.classList.remove('toast-message-slide-in');
+                divToast.classList.add('toast-message-slide-out');
+                divToast.remove();
+                divToast = null;
+            }, 4000);
+
+            document.body.appendChild(divToast);
+        }
+    </script>
 
     <script>
         $('#first_namecheck').hide();
