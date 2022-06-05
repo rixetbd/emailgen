@@ -327,7 +327,7 @@ box-shadow: 0 0 10px 10px #00000010;
 
 .gradient_text {
     background: #fff;
-    background: linear-gradient(to right, #FFFFFF 0%, #ffd000 45%);
+    background: linear-gradient(to right, #FFFFFF 0%, #32CD32 45%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
