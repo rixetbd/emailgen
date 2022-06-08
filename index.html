@@ -95,8 +95,8 @@
                         <button id="copyFunc" type="button" class="btn btn-sm btn-success d-none"><i
                                 class="fa-solid fa-copy"></i> Copy Emails</button>
 
-                        <button id="sendFunc" type="button" class="btn btn-sm btn-success"><i
-                                class="fa-solid fa-copy"></i> Send GMail</button>
+                        <a id="sendFunc" href="" class="btn btn-sm btn-success d-none"><i
+                                class="fa-solid fa-copy"></i> Send GMail</a>
 
                     </div>
                 </div>
@@ -312,8 +312,14 @@
             let emails =
                 `${b}\n${c}\n${a}\n${d}\n${str1 + "." + str2 + str3}\n${e + "." + str2 + str3}\n${str1 + "_" + str2 + str3}\n${str1 + "-" + str2 + str3}\n${e + str2 + str3}\n${str1 + f + str3}\n${str2 + e + str3}\n${e + f + str3}`;
 
+            let gtomail = `${b};${c};${a};${d};${str1 + "." + str2 + str3};${e + "." + str2 + str3};${str1 + "_" + str2 + str3};${str1 + "-" + str2 + str3};${e + str2 + str3};${str1 + f + str3};${str2 + e + str3};${e + f + str3}`;
+
             const output = document.getElementById('output')
             const copyFunc = document.getElementById('copyFunc')
+            const sendFunc = document.getElementById('sendFunc')
+
+            let mailtro = `mailto:${gtomail}`;
+            $('#sendFunc').attr("href", mailtro);
 
             if ($("#first_name").val() != '' && $("#domain").val() != '' && $("#last_name").val() != '') {
                 output.innerText = emails
@@ -321,6 +327,7 @@
 
             if (output.innerText != null) {
                 copyFunc.classList.remove('d-none')
+                sendFunc.classList.remove('d-none')
             }
 
 
