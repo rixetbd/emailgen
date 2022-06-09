@@ -95,7 +95,7 @@
                         <button id="copyFunc" type="button" class="btn btn-sm btn-success d-none"><i
                                 class="fa-solid fa-copy"></i> Copy Emails</button>
 
-                        <a id="sendFunc" href="" class="btn btn-sm btn-success d-none"><i
+                        <a id="sendFunc" href="" target="_blank" class="btn btn-sm btn-success d-none"><i
                                 class="fa-solid fa-copy"></i> Send GMail</a>
 
                     </div>
@@ -318,14 +318,15 @@
             const copyFunc = document.getElementById('copyFunc')
             const sendFunc = document.getElementById('sendFunc')
 
-            let mailtro = `mailto:${gtomail}`;
+            // let mailtro = `mailto:${gtomail}`;
+            let mailtro = `https://mail.google.com/mail/?view=cm&fs=1&tf=1&to=${gtomail}&body=`;
             $('#sendFunc').attr("href", mailtro);
 
             if ($("#first_name").val() != '' && $("#domain").val() != '' && $("#last_name").val() != '') {
                 output.innerText = emails
-            }
+            // }
 
-            if (output.innerText != null) {
+            // if (output.innerText != null) {
                 copyFunc.classList.remove('d-none')
                 sendFunc.classList.remove('d-none')
             }
@@ -379,6 +380,7 @@
             output.innerText = emails
             const copyFunc = document.getElementById('copyFunc')
             copyFunc.classList.add('d-none')
+            sendFunc.classList.add('d-none')
             // location.reload();
         });
 
