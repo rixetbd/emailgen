@@ -279,7 +279,14 @@
 
             var firstNameInput = $("#first_name").val().toLowerCase().replace(/\s/g, '');
             var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
-            var domainInput = $("#domain").val().toLowerCase().replace(/\s/g, '.');
+            var domainInput = $("#domain").val().toLowerCase();
+
+            domainInput = domainInput.replace("http://www.","");
+            domainInput = domainInput.replace("https://www.","");
+            domainInput = domainInput.replace("http://","");
+            domainInput = domainInput.replace("https://","");
+            domainInput = domainInput.replace("www.","");
+            domainInput = domainInput.replace("/","");
 
             if (firstNameInput.length == '') {
                 $('#first_namecheck').show();
