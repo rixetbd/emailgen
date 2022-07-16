@@ -234,6 +234,10 @@
             $("#submitbtn").click();
         });
 
+        $('#fullName').keypress(function () {
+            progressBar();
+            $("#submitbtn").click();
+        });
         $('#fullName').focusout(function () {
             progressBar();
             $("#submitbtn").click();
@@ -311,12 +315,18 @@
             var lastNameInput = $("#last_name").val().toLowerCase().replace(/\s/g, '');
             var domainInput = $("#domain").val().toLowerCase();
 
+            let mainDomain = domainInput.split('/');
+            if(mainDomain.length > 2){
+                domainInput = mainDomain[2];
+            }
+
             domainInput = domainInput.replace("http://www.","");
             domainInput = domainInput.replace("https://www.","");
             domainInput = domainInput.replace("http://","");
             domainInput = domainInput.replace("https://","");
             domainInput = domainInput.replace("www.","");
             domainInput = domainInput.replace("/","");
+
 
             $('#domainDisplay').show();
             $('#domainDisplay').html(domainInput);
