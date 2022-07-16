@@ -230,6 +230,13 @@
             let fullnameArr = fullname.split(" ");
             $('#first_name').val(fullnameArr[0]);
             $('#last_name').val(fullnameArr[1]);
+            progressBar();
+            $("#submitbtn").click();
+        });
+
+        $('#fullName').focusout(function () {
+            progressBar();
+            $("#submitbtn").click();
         });
 
         function progressBar() {
