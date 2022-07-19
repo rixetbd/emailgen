@@ -37,6 +37,7 @@
             position: absolute;
             top: 10px;
             right: 15px;
+            border-radius: 5px;
             background-color: #142631;
         }
         .domainOneSign i{
@@ -67,9 +68,13 @@
                         <h1 class="gradient_text">EFinder v1.2</h1>
                         <p>Fill in the data below.</p>
 
-                        <div class="col-md-12">
+                        <div class="col-md-12 domainOne">
                             <input class="form-control cs_bg" type="text" id="fullName" placeholder="Full Name ( Max 2 words )"
                                 required>
+                                <div class="domainOneSign">
+                                    <i class="fas fa-paste ms-2 me-1"></i>
+                                    <i class="fas fa-redo mx-2" id="fullNameRedo"></i>
+                                </div>
                         </div>
 
                         <div class="row">
@@ -246,20 +251,26 @@
         $('#last_namecheck').hide();
         $('#domaincheck').hide();
 
-        $('#fullName').keyup(function(){
+        function fullNameFun(){
             let fullname = $('#fullName').val();
             let fullnameArr = fullname.split(" ");
             $('#first_name').val(fullnameArr[0]);
             $('#last_name').val(fullnameArr[1]);
+        }
+
+        $('#fullName').keyup(function(){
+            fullNameFun();
             progressBar();
             $("#submitbtn").click();
         });
 
         $('#fullName').keypress(function () {
+            fullNameFun();
             progressBar();
             $("#submitbtn").click();
         });
         $('#fullName').focusout(function () {
+            fullNameFun();
             progressBar();
             $("#submitbtn").click();
         });
@@ -451,6 +462,15 @@
             }
 
 
+        });
+
+        $("#fullNameRedo").click(function () {
+            $('#fullName').val("");
+            fullNameFun();
+            $('#domainDisplay').hide();
+            // $("#submitbtn").click();
+            $('#output').html("");
+            progressBar();
         });
 
         $("#domainRedo").click(function () {
