@@ -1,4 +1,5 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;700;900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700;800&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Condiment&display=swap');
 
 a {
     text-decoration: none;
@@ -6,8 +7,8 @@ a {
 
 *,
 body {
-    font-family: 'Poppins', sans-serif;
-    font-weight: 400;
+    font-family: 'Montserrat', sans-serif;
+    /* font-weight: 400; */
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;
     -moz-osx-font-smoothing: grayscale;
@@ -16,6 +17,7 @@ body {
 ::-webkit-scrollbar{
     display: none;
 }
+
 
 html,
 body {
@@ -54,7 +56,7 @@ body {
     padding: 10px;
     border-top-left-radius: 5px;
     border-bottom-left-radius: 5px;
-    margin-right: -75px !important;
+    margin-right: -80px !important;
     cursor: pointer;
     transition: .3s ease-in;
 }
@@ -170,16 +172,15 @@ body {
     }
 } */
 
-.form-holder {
+/* .form-holder {
     display: flex;
     justify-content: center;
     align-items: center;
     padding-top: 20px;
-    /* min-height: 95vh; */
-}
+} */
 
 @media only screen and (min-width: 600px) {
-    .form-holder {
+    /* .form-holder {
         display: flex;
         justify-content: center;
         align-items: center;
@@ -189,7 +190,7 @@ body {
     .form-content .form-items {
         width: 100%;
         min-width: 540px;
-    }
+    } */
 }
 
 .form-holder .form-content {
@@ -327,7 +328,8 @@ box-shadow: 0 0 10px 10px #00000010;
 
 .gradient_text {
     background: #fff;
-    background: linear-gradient(to right, #FFFFFF 0%, #32CD32 45%);
+    /* background: linear-gradient(to right, #FFFFFF 0%, #32CD32 45%); */
+    background: linear-gradient(to right, #FFFFFF 0%, #dce92ccc 45%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
 }
@@ -364,9 +366,9 @@ box-shadow: 0 0 10px 10px #00000010;
     background: transparent;
     color: #fff;
 }
-.alert_box{
+/* .alert_box{
     min-height:15px;
-}
+} */
 .progress{
     height: 8px;
     background: #0e1b22cc;
@@ -423,4 +425,64 @@ box-shadow: 0 0 10px 10px #00000010;
 
 .vec_car{
     width: 20%;
+}
+
+.displayDom{
+    margin-top: 5px;
+    font-size: 15px !important;
+    text-align: right !important;
+    color: #c7c7c7 !important;
+    margin-bottom: -5px;
+    transition: 1s ease-in;
+}
+.domainOne{
+    position: relative;
+}
+.domainOneSign{
+    position: absolute;
+    top: 2px;
+    right: 5px;
+    border-radius: 5px;
+    color: #636363;
+    background-color: #142631;
+    /* background-color: #bbbbbb; */
+}
+.domainOneSign i{
+    padding: 10px 15px;
+    color: #636363;
+    cursor: pointer;
+}
+.domainOneSign i:hover{
+    color: #5ee05e;
+    background-color: #0e1a22;
+    border-radius: 5px;
+}
+.domainOneSign i:nth-child(2):hover{
+    color: red;
+}
+
+@media only screen and (max-width: 1299px) {
+    .rota{display: none;}
+}
+@media only screen and (min-width: 1300px) {
+    .rota h2{
+        writing-mode: vertical-lr;
+        transform: rotate(180deg);
+        color: #c2d7ef9d;
+        font-size: 100px;
+        font-family: 'Condiment', cursive;
+        background-color: #0E2945;
+        padding: 40px 60px 50px 0px;
+        border-radius: 15px;
+    }
+}
+
+.ruleBox p{
+    font-size: 13px;
+    margin-bottom: 0;
+    color: #c1c1c1;
+}
+
+.ruleBox i{
+    font-size: 10px;
 }
