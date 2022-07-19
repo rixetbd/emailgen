@@ -30,6 +30,22 @@
             margin-bottom: -5px;
             transition: 1s ease-in;
         }
+        .domainOne{
+            position: relative;
+        }
+        .domainOneSign{
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            background-color: #142631;
+        }
+        .domainOneSign i{
+            color: #636363;
+            cursor: pointer;
+        }
+        .domainOneSign i:hover{
+            color: #fff;
+        }
     </style>
 </head>
 
@@ -68,9 +84,14 @@
                             </div>
                         </div>
 
-                        <div class="col-md-12">
+                        <div class="col-md-12 domainOne">
                             <input class="form-control cs_bg" type="text" id="domain" placeholder="example.com"
                                 required>
+                                <!-- <i class="fas fa-redo domainOneSign"></i> -->
+                                <div class="domainOneSign">
+                                    <i class="fas fa-paste ms-2 me-1"></i>
+                                    <i class="fas fa-redo mx-2" id="domainRedo"></i>
+                                </div>
                         </div>
 
                         <p class="displayDom" id="domainDisplay"></p>
@@ -145,7 +166,7 @@
     </script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/prettify/r298/run_prettify.js"></script>
 
-    <script type="module">
+    <!-- <script type="module">
         var app = new Vue({
           el: "#app",
           data: {
@@ -217,7 +238,7 @@
             }
           },
         });
-      </script>
+      </script> -->
 
 
     <script>
@@ -308,6 +329,11 @@
             $("#submitbtn").click();
         });
 
+        // $("#domain").click(function () {
+        //     let domainVal = navigator.clipboardData.getData('text/plain');
+        //     // $("#domain").val().bind("paste", paste_input);
+        //     console.log(domainVal);
+        // });
 
         $("#submitbtn").click(function () {
 
@@ -425,6 +451,14 @@
             }
 
 
+        });
+
+        $("#domainRedo").click(function () {
+            $('#domain').val("");
+            $('#domainDisplay').hide();
+            // $("#submitbtn").click();
+            $('#output').html("");
+            progressBar();
         });
 
         $("#resetbtn").click(function () {
