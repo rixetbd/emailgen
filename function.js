@@ -4,7 +4,7 @@ function OneSecDelay(){
     {
         $("#submitbtn").click();
         progressBar();
-    }, 0);
+    }, 10);
 };
 
 // Status Text
