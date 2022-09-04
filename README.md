@@ -1,5 +1,5 @@
 
-![Logo](https://i.ibb.co/Qkcw5KN/email-3249062-1280.jpg)
+![Logo](https://i.ibb.co/Lrz0tR1/rixetbd-github-io-emailgen.png)
 
 
 
